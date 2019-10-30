@@ -13,11 +13,16 @@ class AnimalsTableViewController: UITableViewController {
     // MARK: - Properties
     
     private var animalNames: [String] = []
+    var apiController = APIController()
 
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // performSegue to LoginViewController if bearer doesn't exist?
+        if apiController.bearer == nil {
+            performSegue(withIdentifier: "LoginViewModalSegue", sender: nil)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,6 +58,15 @@ class AnimalsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LoginViewModalSegue" {
             // inject dependencies
+            if let loginVC = segue.destination as? LoginViewController {
+                
+                // this is dependency injection (can also use singleton?)
+                loginVC.apiController = apiController
+            }
         }
     }
 }
+
+// SINGLETON examples:
+//                       DispatchQueue.main    main is the singleton
+//                       URLSession.shared     shared is a singleton

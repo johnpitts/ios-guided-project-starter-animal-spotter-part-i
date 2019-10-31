@@ -16,6 +16,7 @@
 		CEDCA59A226697BD009EA535 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDCA599226697BD009EA535 /* APIController.swift */; };
 		FC3467F82369F5BC004CF4AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3467F72369F5BC004CF4AD /* User.swift */; };
 		FC3467FB2369FBEB004CF4AD /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3467FA2369FBEB004CF4AD /* Bearer.swift */; };
+		FC34681F236B3EED004CF4AD /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34681E236B3EED004CF4AD /* AnimalDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CEDCA599226697BD009EA535 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		FC3467F72369F5BC004CF4AD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FC3467FA2369FBEB004CF4AD /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
+		FC34681E236B3EED004CF4AD /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +86,9 @@
 		CEDCA5982266967E009EA535 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CEDCA59022668D0F009EA535 /* LoginViewController.swift */,
+				FC34681E236B3EED004CF4AD /* AnimalDetailViewController.swift */,
 				CEDCA58E22668BCF009EA535 /* AnimalsTableViewController.swift */,
+				CEDCA59022668D0F009EA535 /* LoginViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				FC3467FB2369FBEB004CF4AD /* Bearer.swift in Sources */,
 				CEDCA57B22668AB2009EA535 /* AppDelegate.swift in Sources */,
 				FC3467F82369F5BC004CF4AD /* User.swift in Sources */,
+				FC34681F236B3EED004CF4AD /* AnimalDetailViewController.swift in Sources */,
 				CEDCA58F22668BCF009EA535 /* AnimalsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

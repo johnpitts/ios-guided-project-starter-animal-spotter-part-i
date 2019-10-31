@@ -49,7 +49,15 @@ class AnimalsTableViewController: UITableViewController {
     // MARK: - Actions
     
     @IBAction func getAnimals(_ sender: UIBarButtonItem) {
-        // fetch all animals from API
+        apiController.fetchAllAnimalNames { (result) in
+            if let names = try? result.get() {
+                // try? means you don't need a catch statement!  So no do-try-catch block required
+                // if this succeeds, object will be stored in names,  but upon failure error is ignored and names will be nil, thus false, thus 'if let' gets skipped!
+                DispatchQueue.main.async {
+                    <#code#>
+                }
+            }
+        }
     }
     
     // MARK: - Navigation

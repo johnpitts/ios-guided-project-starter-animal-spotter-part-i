@@ -79,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdi-kT-dVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2042" y="347"/>
+            <point key="canvasLocation" x="2526" y="385"/>
         </scene>
         <!--Animal Spotter-->
         <scene sceneID="y90-0a-iVi">
@@ -127,6 +127,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAK-9d-Sq1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1189.8550724637682" y="732.58928571428567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pIW-uU-09G">
+            <objects>
+                <viewController id="3eY-EG-DIc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eAr-Va-H9N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ogj-Ju-zOq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uvN-Nz-bzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2061" y="1037"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6vh-Yx-OZ4">

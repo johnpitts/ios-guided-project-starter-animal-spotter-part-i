@@ -147,7 +147,69 @@ class APIController {
     
     
     
-    // create function to fetch image
+    // create function to fetch one animal & its details
+    func fetchDetails(for animalName: String, completion: @escaping (Result<Animal, NetworkError>) -> Void) {
+        guard let bearer = bearer else {
+            completion(.failure(.noAuth))
+            return
+        }
+        let animalURL = baseUrl.appendingPathComponent("animal/\(animalName)")
+        
+        var request = URLRequest(url: animalURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.addValue("Bearer \(bearer.token)", forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode == 401 {
+                completion(.failure(.badAuth))
+                return
+            }                                                          // HANDLE ALL THE BAD STATES FIRST!
+            if let error = error {
+                print("Error receiving animal detail data: \(error)")
+                completion(.failure(.otherError))
+            }
+            guard let data = data else {
+                completion(.failure(.badData))
+                return
+            }
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .secondsSince1970
+            do {
+                let animal = try decoder.decode(Animal.self, from: data)
+                completion(.success(animal))
+            } catch {
+                print("Error decoding animal detail: \(error)")
+                completion(.failure(.noDecode))
+                return
+            }
+            }.resume()
+    }
     
+    
+    // create function to fetch image
+    func fetchImage(at urlString: String, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
+        let imageURL = URL(string: urlString)!
+        
+        var request = URLRequest(url: imageURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        
+        URLSession.shared.dataTask(with: request) { (data, _, error) in
+            if let error = error {
+                print("error fetching image: \(error)")
+                completion(.failure(.otherError))
+                return
+            }
+            guard let data = data else {
+                completion(.failure(.badData))
+                return
+            }
+            if let image = UIImage(data: data) {
+                completion(.success(image))
+            } else {
+                completion(.failure(.noDecode))
+            }
+        }.resume()
+    }
     
 }

@@ -54,8 +54,15 @@ class AnimalsTableViewController: UITableViewController {
                 // try? means you don't need a catch statement!  So no do-try-catch block required
                 // if this succeeds, object will be stored in names,  but upon failure error is ignored and names will be nil, thus false, thus 'if let' gets skipped!
                 DispatchQueue.main.async {
-                    <#code#>
+                    self.animalNames = names
                 }
+                // } catch {
+                // if let error = error as? NetworkError {
+                //     switch Error {
+                //     case .noAuth:
+                //         print("No bearer token exists")
+                //     case .badAuth:
+                //         print("
             }
         }
     }
@@ -70,6 +77,13 @@ class AnimalsTableViewController: UITableViewController {
                 
                 // this is dependency injection (can also use singleton?)
                 loginVC.apiController = apiController
+            }
+        }
+        if segue.identifier == "ShowAnimalDetailSegue" {
+            if let indexPath = tableView.indexPathForSelectedRow,
+                let detailVC = segue.destination as? AnimalDetailViewController {
+                detailVC.animalName = animalNames[indexPath.row]
+                detailVC.apiController = apiController
             }
         }
     }

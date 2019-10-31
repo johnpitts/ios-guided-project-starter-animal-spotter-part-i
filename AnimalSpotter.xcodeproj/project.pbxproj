@@ -17,6 +17,7 @@
 		FC3467F82369F5BC004CF4AD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3467F72369F5BC004CF4AD /* User.swift */; };
 		FC3467FB2369FBEB004CF4AD /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3467FA2369FBEB004CF4AD /* Bearer.swift */; };
 		FC34681F236B3EED004CF4AD /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC34681E236B3EED004CF4AD /* AnimalDetailViewController.swift */; };
+		FC346821236B4FA1004CF4AD /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC346820236B4FA1004CF4AD /* Animal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FC3467F72369F5BC004CF4AD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FC3467FA2369FBEB004CF4AD /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		FC34681E236B3EED004CF4AD /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
+		FC346820236B4FA1004CF4AD /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				CEDCA599226697BD009EA535 /* APIController.swift */,
+				FC346820236B4FA1004CF4AD /* Animal.swift */,
 				FC3467F72369F5BC004CF4AD /* User.swift */,
 				FC3467FA2369FBEB004CF4AD /* Bearer.swift */,
 			);
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEDCA59A226697BD009EA535 /* APIController.swift in Sources */,
+				FC346821236B4FA1004CF4AD /* Animal.swift in Sources */,
 				CEDCA59122668D0F009EA535 /* LoginViewController.swift in Sources */,
 				FC3467FB2369FBEB004CF4AD /* Bearer.swift in Sources */,
 				CEDCA57B22668AB2009EA535 /* AppDelegate.swift in Sources */,

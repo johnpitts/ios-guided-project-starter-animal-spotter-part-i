@@ -62,7 +62,7 @@ class AnimalsTableViewController: UITableViewController {
                 //     case .noAuth:
                 //         print("No bearer token exists")
                 //     case .badAuth:
-                //         print("
+                //         print("etc.........
             }
         }
     }

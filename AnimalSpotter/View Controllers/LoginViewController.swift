@@ -64,7 +64,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         } else {
             apiController.signIn(with: user) { (error) in
                 if let error = error {                               // Here you'd warn the user using alertController or change wording to red or some other signal that something went wrong
-                    print("Error occured during signin: \(error)")
+                    print("Error occured during signin: \(error) \n")
                     
                 } else {
                     DispatchQueue.main.sync {

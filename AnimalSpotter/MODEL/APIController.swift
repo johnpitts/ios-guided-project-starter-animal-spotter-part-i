@@ -14,23 +14,25 @@ enum HTTPMethod: String {
     case post = "POST"
 }
 
+enum NetworkError: Error {
+    case noAuth
+    case badAuth
+    case otherError
+    case badData
+    case noDecode
+}
 
 class APIController {
     
     private let baseUrl = URL(string: "https://lambdaanimalspotter.vapor.cloud/api")!
     var bearer: Bearer?
     
-    enum NetworkError: Error {
-        case noAuth
-        case badAuth
-        case otherError
-        case badData
-        case noDecode
-    }
 
     // create function for sign up
     func signUp(with user: User, completion: @escaping (Error?) -> ()) {
-        let signUpURL = baseUrl.appendingPathComponent("user/signup")
+        let signUpURL = baseUrl.appendingPathComponent("users/signup")         // huge 404 error since I had user/signup not users/signup
+        
+        print(signUpURL)
         
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -39,6 +41,9 @@ class APIController {
         let jsonEncoder = JSONEncoder()
         do {
             let jsonData = try jsonEncoder.encode(user)
+            
+            print("\(String(data: jsonData, encoding: .utf8))")
+            
             request.httpBody = jsonData
         } catch {
             NSLog("Error encoding user object: \(error)")
@@ -62,7 +67,7 @@ class APIController {
     
     // create function for sign in
     func signIn(with user: User, completion: @escaping (Error?) -> ()) {
-        let signInURL = baseUrl.appendingPathComponent("user/login")
+        let signInURL = baseUrl.appendingPathComponent("users/login")
         
         var request = URLRequest(url: signInURL)
         request.httpMethod = HTTPMethod.post.rawValue
